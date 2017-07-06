@@ -1,0 +1,74 @@
+@mixin header($scale-factor) {
+  $header-font-size: $body-font-size * $scale-factor;
+  font-size: $header-font-size;
+  line-height: ceil($header-font-size/$body-line-height);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i|EB+Garamond:400|Lora:400i');
+$font-family-sans-serif: 'Lato', sans-serif;
+$font-family-serif: 'EB Garamond', serif;
+
+$font-size-base: 1;
+$body-font-size: 1rem * $font-size-base;
+
+$line-height-base: 1.5;
+$body-line-height: 1rem * $line-height-base;
+
+html {
+  font-size: 125%;
+}
+
+body {
+  font-family: $font-family-sans-serif;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  color: #333;
+}
+
+h1, h2, h3, ul, p, iframe, .fluid-width-video-wrapper {
+  margin: 0 0 $body-line-height 0;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-top: $body-line-height;
+}
+
+h2 {
+  @include header(1.5);
+}
+
+h3 {
+  font-size: 2.4rem;
+  line-height: 1.25;
+}
+
+.underline {
+  border-bottom: 1px solid;
+}
+
+blockquote {
+  &:before {
+    content: '\201c';
+    font-size: 2em;
+    color: goldenrod;
+    position: absolute;
+    display: block;
+    left: -$body-line-height;
+  }
+  position: relative;
+  margin: 0 $body-line-height $body-line-height;
+  p {
+    font-style: italic;
+  }
+  footer {
+    margin-top: -$body-line-height;
+  }
+  cite {
+    font-style: normal;
+    &:before {
+      content: '\2014';
+    }
+  }
+}

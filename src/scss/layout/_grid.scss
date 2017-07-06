@@ -1,0 +1,46 @@
+$container-width: 45em;
+$grid-padding: 0.75em;
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  @media (min-width: 900px) {
+    width: $container-width;
+  }
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
+  margin: 0 auto;
+}
+
+.row {
+  box-sizing: border-box;
+  margin-left: -$grid-padding;
+  margin-right: -$grid-padding;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin col {
+  box-sizing: border-box;
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
+  float: left;
+}
+
+@for $n from 1 through 12 {
+  .col-#{$n} {
+    width: 100%;
+    @media (min-width: 900px) {
+      width: 100% * ($n/12);
+    }
+    @include col;
+  }
+}
+
