@@ -1,22 +1,66 @@
 .nav {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background: $white;
+  text-align: right;
   @media (min-width: 900px) {
     position: sticky;
-    top: 0;
-    text-align: right;
+  }
+}
+
+.nav-handle {
+  position: absolute;
+  right: 0;
+  padding: $grid-padding;
+  color: $gold;
+  font-size: 1.5rem;
+  font-family: 'FontAwesome';
+  &:before {
+    content: '\f0c9';
+  }
+  &.open:before {
+    content: '\f00d';
+  }
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.nav-collapse {
+  display: none;
+  height: 100vh;
+  padding-top: ($body-line-height * 2);
+  padding-bottom: $body-line-height;
+  @media (min-width: 900px) {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+}
+
+.nav-header {
+  display: none;
+  @media (min-width: 900px) {
+    display: block;
   }
 }
 
 .nav-list {
   list-style: none;
   padding: 0;
-  text-transform: uppercase;
 }
 
 .nav-item {
   position: relative;
-  display: inline-block;
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  text-transform: uppercase;
   @media (min-width: 900px) {
-    display: block;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
+    margin-bottom: 0;
   }
 }
 
@@ -50,7 +94,6 @@
 
 .social-link {
   display: inline-block;
-  font-size: 80%;
   width: 1.5em;
   text-align: center;
   &:hover {
@@ -58,5 +101,8 @@
     .fa:before {
       content: '\f08e';
     }
+  }
+  @media (min-width: 900px) {
+    font-size: 80%;
   }
 }

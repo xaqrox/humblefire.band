@@ -78,24 +78,25 @@ html(lang='en')
     .container
       .row
         .nav.col-3
-            h2
-              a(href='/') Humble Fire
-            ul.nav-list
-              +nav-item('#music', 'Music')
-              +nav-item('#bio', 'Bio')
-              +nav-item('#shows', 'Shows')
-              +nav-item('#press', 'Press')
-              +nav-item('#video', 'Video')
-              +nav-item('https://humblefire.bandcamp.com/merch', 'Merch')(target='_blank')
-            .social-links
-              +social-link('http://facebook.com/humblefireband', 'facebook')
-              +social-link('http://twitter.com/humblefirerocks', 'twitter')
-              +social-link('http://instagram.com/humblefire', 'instagram')
-              +social-link('http://humblefire.tumblr.com', 'tumblr')
-              +social-link('http://soundcloud.com/humblefire', 'soundcloud')
-              +social-link('http://humblefire.bandcamp.com', 'bandcamp')
-              +social-link('https://open.spotify.com/artist/2J0nfys688Y2Q8zXx6mevQ', 'spotify')
-              +social-link('https://www.youtube.com/channel/UCVrSMd6doRpB5ZrZ1azqWmw', 'youtube')
+            h2.nav-header Humble Fire
+            .nav-handle
+            .nav-collapse
+              ul.nav-list
+                +nav-item('#music', 'Music')
+                +nav-item('#bio', 'Bio')
+                +nav-item('#shows', 'Shows')
+                +nav-item('#press', 'Press')
+                +nav-item('#video', 'Video')
+                +nav-item('https://humblefire.bandcamp.com/merch', 'Merch')(target='_blank')
+              .social-links
+                +social-link('http://facebook.com/humblefireband', 'facebook')
+                +social-link('http://twitter.com/humblefirerocks', 'twitter')
+                +social-link('http://instagram.com/humblefire', 'instagram')
+                +social-link('http://humblefire.tumblr.com', 'tumblr')
+                +social-link('http://soundcloud.com/humblefire', 'soundcloud')
+                +social-link('http://humblefire.bandcamp.com', 'bandcamp')
+                +social-link('https://open.spotify.com/artist/2J0nfys688Y2Q8zXx6mevQ', 'spotify')
+                +social-link('https://www.youtube.com/channel/UCVrSMd6doRpB5ZrZ1azqWmw', 'youtube')
 
         .content.col-9
           +section('music', 'Music')

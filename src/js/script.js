@@ -6,6 +6,9 @@
       const href = $(this).attr('href');
       if (href.match(/^#/)) {
         e.preventDefault();
+        if ($('.nav-handle').hasClass('open')) {
+          toggleNav();
+        }
         $root.animate({
             scrollTop: $(href).offset().top
         }, 500, () => (window.location.hash = href));
@@ -27,11 +30,23 @@
     .mouseleave(function () {
       $(this).removeClass('nav-down nav-up');
     });
+
     sectionHeight();
+
     $('.container').fitVids();
+
+    $('.nav-handle').click(toggleNav);
   })
 
-  $(window).resize(sectionHeight);
+  $(window).resize(function () {
+    // @TODO if window min width make sure nav shown
+    sectionHeight();
+  });
+
+  function toggleNav() {
+    $('.nav-collapse').toggle();
+    $('.nav-handle').toggleClass('open');
+  }
 
   function sectionHeight() {
     $('.section').last().css('min-height', $(window).height());
