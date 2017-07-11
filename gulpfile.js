@@ -12,7 +12,7 @@ var path = {
     babel: 'src/js/**/*.js',
   },
   dist(glob) {
-    return glob ? `dist/${glob}` : 'dist';
+    return glob ? `docs/${glob}` : 'docs';
   },
 };
 
@@ -61,11 +61,12 @@ var watchTasks = buildTasks.map(function (task) {
 
 gulp.task('watch', watchTasks);
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('serve', ['build', 'watch'], function () {
+  const dist = path.dist();
   browserSync.init({
-    server: './dist',
+    server: dist,
   });
-  gulp.watch(path.dist()).on('change', browserSync.reload);
+  gulp.watch(dist).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['build']);
