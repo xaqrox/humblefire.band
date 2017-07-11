@@ -10,6 +10,7 @@ var path = {
     pug: 'src/index.pug',
     sass: 'src/scss/**/*.scss',
     babel: 'src/js/**/*.js',
+    assets: 'assets/**/*.*',
   },
   dist(glob) {
     return glob ? `docs/${glob}` : 'docs';
@@ -47,7 +48,12 @@ gulp.task('babel', function () {
     .pipe(browserSync.stream());
 });
 
-var buildTasks = ['pug', 'sass', 'babel'];
+gulp.task('assets', function () {
+  return gulp.src(path.src.assets)
+    .pipe(gulp.dest(path.dist()));
+});
+
+var buildTasks = ['pug', 'sass', 'babel', 'assets'];
 
 gulp.task('build', buildTasks);
 
