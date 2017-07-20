@@ -37,7 +37,7 @@ mixin youtube(videoId)
 mixin spotify(uri, size)
   iframe.spotify(
     class='spotify-'+size,
-    width='100%',
+    style='width: 100%;',
     src='https://embed.spotify.com/?theme=white&uri='+uri,
     frameborder="0",
     allowtransparency='true',
@@ -56,7 +56,7 @@ html(lang='en')
   head
     title Humble Fire
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <meta charset="utf8">
+    <meta charset="utf-8">
     script(
       src="https://use.fontawesome.com/e6a1e90877.js",
     )
@@ -79,7 +79,10 @@ html(lang='en')
       .hero-logo
         include ../assets/img/logo.svg
       .hero-image
-        img(src="img/humble-fire-roof.jpg")
+        img(
+          src="img/humble-fire-roof.jpg",
+          alt="Humble Fire looking sassy on a rooftop with a beautiful blue sky behind them"
+        )
       .hero-content
         .container
           +spotify('spotify:user:xaqrox:playlist:40SPLGfWbQebXE5akRjQNm', 'small')
@@ -113,8 +116,6 @@ html(lang='en')
 
         .content.col-9
           +section('music', 'Music')
-            p
-              +link('http://humblefire.bandcamp.com', 'Pre-order vinyl on Bandcamp.')(target='_blank')
             +spotify('spotify:album:6cHmRRrOlF2A9LqN1TDF7C', 'small')
             +spotify('spotify:album:2S82yJ2I4xcf01IRXl6FP6', 'small')
             +spotify('spotify:album:5vtiB62FWhVHTsvKQxe8kX', 'small')
