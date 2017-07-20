@@ -89,57 +89,58 @@ html(lang='en')
           h1.hero-title
             +link('http://humblefire.bandcamp.com/album/builder')(target='_blank')
               :markdown-it(inline) Pre-order new album *Builder*, out July 28, on vinyl, CD, and download now!
-    .container
-      .row
-        .nav.col-3
-            h2.nav-header Humble Fire
-            .nav-handle
-            .nav-collapse
-              ul.nav-list
-                +nav-item('#music', 'Music')
-                +nav-item('#video', 'Video')
-                +nav-item('#shows', 'Shows')
-                +nav-item('#press', 'Press')
-                +nav-item('#bio', 'Bio')
-                +nav-item('https://humblefire.bandcamp.com/merch', 'Store')(target='_blank')
-              .signup
-                include inc/tinyletter.html
-              .social-links
-                +social-link('http://facebook.com/humblefireband', 'facebook')
-                +social-link('http://twitter.com/humblefirerocks', 'twitter')
-                +social-link('http://instagram.com/humblefire', 'instagram')
-                +social-link('http://humblefire.tumblr.com', 'tumblr')
-                +social-link('http://soundcloud.com/humblefire', 'soundcloud')
-                +social-link('http://humblefire.bandcamp.com', 'bandcamp')
-                +social-link('https://open.spotify.com/artist/2J0nfys688Y2Q8zXx6mevQ', 'spotify')
-                +social-link('https://www.youtube.com/channel/UCVrSMd6doRpB5ZrZ1azqWmw', 'youtube')
+    .rays
+      .container
+        .row
+          .nav.col-3
+              h2.nav-header Humble Fire
+              .nav-handle
+              .nav-collapse
+                ul.nav-list
+                  +nav-item('#music', 'Music')
+                  +nav-item('#video', 'Video')
+                  +nav-item('#shows', 'Shows')
+                  +nav-item('#press', 'Press')
+                  +nav-item('#bio', 'Bio')
+                  +nav-item('https://humblefire.bandcamp.com/merch', 'Store')(target='_blank')
+                .signup
+                  include inc/tinyletter.html
+                .social-links
+                  +social-link('http://facebook.com/humblefireband', 'facebook')
+                  +social-link('http://twitter.com/humblefirerocks', 'twitter')
+                  +social-link('http://instagram.com/humblefire', 'instagram')
+                  +social-link('http://humblefire.tumblr.com', 'tumblr')
+                  +social-link('http://soundcloud.com/humblefire', 'soundcloud')
+                  +social-link('http://humblefire.bandcamp.com', 'bandcamp')
+                  +social-link('https://open.spotify.com/artist/2J0nfys688Y2Q8zXx6mevQ', 'spotify')
+                  +social-link('https://www.youtube.com/channel/UCVrSMd6doRpB5ZrZ1azqWmw', 'youtube')
 
-        .content.col-9
-          +section('music', 'Music')
-            +spotify('spotify:album:6cHmRRrOlF2A9LqN1TDF7C', 'small')
-            +spotify('spotify:album:2S82yJ2I4xcf01IRXl6FP6', 'small')
-            +spotify('spotify:album:5vtiB62FWhVHTsvKQxe8kX', 'small')
+          .content.col-9
+            +section('music', 'Music')
+              +spotify('spotify:album:6cHmRRrOlF2A9LqN1TDF7C', 'small')
+              +spotify('spotify:album:2S82yJ2I4xcf01IRXl6FP6', 'small')
+              +spotify('spotify:album:5vtiB62FWhVHTsvKQxe8kX', 'small')
 
-          +section('video', 'Video')
-            +youtube('D_f5h_qEhQM')
-            +youtube('7LygOKxkMl4')
+            +section('video', 'Video')
+              +youtube('D_f5h_qEhQM')
+              +youtube('7LygOKxkMl4')
 
-          +section('shows', 'Shows')
-            include inc/songkick.html
+            +section('shows', 'Shows')
+              include inc/songkick.html
 
-          +section('press', 'Press')
-            p
-              +link('#', 'Click here for press kit!')
-            +pullquote('http://www.npr.org/event/music/534947765/first-watch-humble-fire-builder', 'Bob Boilen, NPR')
-              :typogr The video for this song...is about the ties that bind and also the ties that confine.
-            +pullquote('http://www.logicfuzzy.com/2017/07/video-of-day-303-humble-fire.html', 'Fuzzy Logic')
-              :typogr "Builder" could be considered the five-and-a-half minute equivalent of the most penetrating, burning smolder of a stare humanly possible.
-            +pullquote('https://hometownsoundsdc.com/2017/05/08/humble-fire-taliesin/', 'Hometown Sounds')
-              :typogr Dream pop band Humble Fire really created something special with the video for their new single "Taliesin".
-            +pullquote('http://audiofuzz.com/see/architectural-music-humble-fire-taliesin/', 'AudioFuzz')
-              :typogr ...what Frank Lloyd Wright's buildings would sound like if they could sing.
-            +pullquote('', 'Hometown Sounds')
-              :typogr Dreamy pop band Humble Fire have simply been killing it...
+            +section('press', 'Press')
+              p
+                +link('#', 'Click here for press kit!')
+              +pullquote('http://www.npr.org/event/music/534947765/first-watch-humble-fire-builder', 'Bob Boilen, NPR')
+                :typogr The video for this song...is about the ties that bind and also the ties that confine.
+              +pullquote('http://www.logicfuzzy.com/2017/07/video-of-day-303-humble-fire.html', 'Fuzzy Logic')
+                :typogr "Builder" could be considered the five-and-a-half minute equivalent of the most penetrating, burning smolder of a stare humanly possible.
+              +pullquote('https://hometownsoundsdc.com/2017/05/08/humble-fire-taliesin/', 'Hometown Sounds')
+                :typogr Dream pop band Humble Fire really created something special with the video for their new single "Taliesin".
+              +pullquote('http://audiofuzz.com/see/architectural-music-humble-fire-taliesin/', 'AudioFuzz')
+                :typogr ...what Frank Lloyd Wright's buildings would sound like if they could sing.
+              +pullquote('', 'Hometown Sounds')
+                :typogr Dreamy pop band Humble Fire have simply been killing it...
 
-          +section('bio', 'Bio')
-            include:markdown-it(typographer):typogr inc/bio.md
+            +section('bio', 'Bio')
+              include:markdown-it(typographer):typogr inc/bio.md
