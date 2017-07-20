@@ -42,14 +42,23 @@
 
 .hero-content {
   width: 100%;
-  margin-bottom: 3 * $body-line-height;
+  padding: (2 * $body-line-height) 0;
+  background-color: rgba(0, 0, 0, 0.5);
   @include aspect-break {
     position: absolute;
     bottom: 0;
   }
-  h1 {
-    font-size: 2em;
-    line-height: 1.5 * $body-line-height;
-    text-shadow: 0 0 5px $black;
+}
+
+.hero-title {
+  font-size: 2em;
+  line-height: 1.5 * $body-line-height;
+  color: $gold;
+  font-weight: $font-weight-bold;
+}
+
+.hero-blurb {
+  a {
+    color: $gold;
   }
 }

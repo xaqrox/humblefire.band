@@ -4,7 +4,7 @@ $grid-padding: 0.75rem;
 
 // Colors
 $gold:  #f5ac1c;
-$black: #333;
+$black: #222;
 $white: #fcfdfc;
 
 // Typography
@@ -14,3 +14,6 @@ $font-size-base: 1;
 $body-font-size: 1rem * $font-size-base;
 $line-height-base: 1.5;
 $body-line-height: 1rem * $line-height-base;
+$font-weight-normal: 300;
+$font-weight-semibold: 400;
+$font-weight-bold: 700;

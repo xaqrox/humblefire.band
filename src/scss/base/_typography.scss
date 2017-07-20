@@ -4,7 +4,7 @@
   line-height: ceil($header-font-size/$body-line-height);
 }
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300,300i|EB+Garamond:400|Lora:400i');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i');
 
 
 
@@ -24,7 +24,7 @@ h1, h2, h3, ul, p, iframe, .fluid-width-video-wrapper, form {
 }
 
 h1, h2, h3 {
-  font-weight: normal;
+  font-weight: $font-weight-normal;
   text-transform: uppercase;
   padding-top: $body-line-height;
 }
@@ -39,7 +39,7 @@ h3 {
 }
 
 .underline {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid $gold;
 }
 
 input {
@@ -53,8 +53,8 @@ input {
   &[type="submit"] {
     padding: 0;
     background: $gold;
-    color: $white;
-    font-weight: bold;
+    color: $black;
+    font-weight: $font-weight-bold;
     text-align: center;
   }
 }
@@ -80,6 +80,7 @@ blockquote {
     font-style: normal;
     &:before {
       content: '\2014';
+      color: $gold;
     }
   }
 }

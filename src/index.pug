@@ -85,10 +85,11 @@ html(lang='en')
         )
       .hero-content
         .container
-          +spotify('spotify:user:xaqrox:playlist:40SPLGfWbQebXE5akRjQNm', 'small')
           h1.hero-title
+            :markdown-it(inline) New album *Builder* out July 28
+          p.hero-blurb
             +link('http://humblefire.bandcamp.com/album/builder')(target='_blank')
-              :markdown-it(inline) Pre-order new album *Builder*, out July 28, on vinyl, CD, and download now!
+              :markdown-it(inline) Pre-order on vinyl, CD, or download now
     .rays
       .container
         .row
@@ -129,8 +130,6 @@ html(lang='en')
               include inc/songkick.html
 
             +section('press', 'Press')
-              p
-                +link('#', 'Click here for press kit!')
               +pullquote('http://www.npr.org/event/music/534947765/first-watch-humble-fire-builder', 'Bob Boilen, NPR')
                 :typogr The video for this song...is about the ties that bind and also the ties that confine.
               +pullquote('http://www.logicfuzzy.com/2017/07/video-of-day-303-humble-fire.html', 'Fuzzy Logic')
