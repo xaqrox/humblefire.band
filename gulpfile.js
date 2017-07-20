@@ -4,10 +4,17 @@ var serve = require('gulp-serve');
 var sass = require('gulp-sass');
 var babel = require('gulp-babel');
 var browserSync = require('browser-sync');
+var typogr = require('typogr');
 
 var path = {
   src: {
     pug: 'src/index.pug',
+    sass: 'src/scss/**/*.scss',
+    babel: 'src/js/**/*.js',
+    assets: 'assets/**/*.*',
+  },
+  watch: {
+    pug: '{src/index.pug,src/inc/*}',
     sass: 'src/scss/**/*.scss',
     babel: 'src/js/**/*.js',
     assets: 'assets/**/*.*',
@@ -24,7 +31,11 @@ function logError(err) {
 
 gulp.task('pug', function () {
   return gulp.src(path.src.pug)
-    .pipe(pug())
+    .pipe(pug({
+      filters: {
+        typogr: typogr.typogrify,
+      },
+    }))
     .on('error', logError)
     .pipe(gulp.dest(path.dist()))
     .pipe(browserSync.stream());
@@ -60,7 +71,7 @@ gulp.task('build', buildTasks);
 var watchTasks = buildTasks.map(function (task) {
   var watchTask = `watch:${task}`;
   gulp.task(watchTask, function () {
-    gulp.watch(path.src[task], [task]);
+    gulp.watch(path.watch[task], [task]);
   });
   return watchTask;
 });

@@ -8,5 +8,9 @@
     "serve": "serve dist"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jstransformer-markdown-it": "^2.0.0",
+    "typogr": "^0.6.7"
+  }
 }
