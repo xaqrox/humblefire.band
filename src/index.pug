@@ -93,11 +93,11 @@ html(lang='en')
             .nav-collapse
               ul.nav-list
                 +nav-item('#music', 'Music')
-                +nav-item('#bio', 'Bio')
+                +nav-item('#video', 'Video')
                 +nav-item('#shows', 'Shows')
                 +nav-item('#press', 'Press')
-                +nav-item('#video', 'Video')
-                +nav-item('https://humblefire.bandcamp.com/merch', 'Merch')(target='_blank')
+                +nav-item('#bio', 'Bio')
+                +nav-item('https://humblefire.bandcamp.com/merch', 'Store')(target='_blank')
               .social-links
                 +social-link('http://facebook.com/humblefireband', 'facebook')
                 +social-link('http://twitter.com/humblefirerocks', 'twitter')
@@ -115,10 +115,10 @@ html(lang='en')
             +spotify('spotify:album:6cHmRRrOlF2A9LqN1TDF7C', 'small')
             +spotify('spotify:album:2S82yJ2I4xcf01IRXl6FP6', 'small')
             +spotify('spotify:album:5vtiB62FWhVHTsvKQxe8kX', 'small')
-            +spotify('spotify:album:4vhOqFzjJhH3ZYzkwVbrwT', 'large')
 
-          +section('bio', 'Bio')
-            include:markdown-it(typographer):typogr inc/bio.md
+          +section('video', 'Video')
+            +youtube('D_f5h_qEhQM')
+            +youtube('7LygOKxkMl4')
 
           +section('shows', 'Shows')
             include inc/songkick.html
@@ -137,6 +137,5 @@ html(lang='en')
             +pullquote('', 'Hometown Sounds')
               :typogr Dreamy pop band Humble Fire have simply been killing it...
 
-          +section('video', 'Video')
-            +youtube('D_f5h_qEhQM')
-            +youtube('7LygOKxkMl4')
+          +section('bio', 'Bio')
+            include:markdown-it(typographer):typogr inc/bio.md
