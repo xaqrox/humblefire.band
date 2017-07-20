@@ -2,7 +2,7 @@
   // https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-nav-link
   $(document).ready(() => {
     const $root = $('html, body');
-    $('.nav-link').click(function (e) {
+    $('a').click(function (e) {
       const href = $(this).attr('href');
       if (href.match(/^#/)) {
         e.preventDefault();
@@ -13,8 +13,9 @@
             scrollTop: $(href).offset().top
         }, 500, () => (window.location.hash = href));
       }
-    })
-    .hover(function (e) {
+    });
+
+    $('.nav-link').hover(function (e) {
       const href = $(this).attr('href');
       if (href.match(/^#/)) {
         let $target = $(href);

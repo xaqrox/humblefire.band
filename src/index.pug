@@ -75,6 +75,7 @@ html(lang='en')
       href='css/styles.css'
     )
   body
+    #top
     .hero
       .hero-logo
         include ../assets/img/logo.svg
@@ -86,35 +87,41 @@ html(lang='en')
       .hero-content
         .container
           h1.hero-title
-            :markdown-it(inline) New album *Builder* out July 28
+            +link('http://humblefire.bandcamp.com/album/builder').hero-link(target='_blank')
+              :typogr:markdown-it(inline) New album *Builder* out 28&nbsp;July 2017
           p.hero-blurb
-            +link('http://humblefire.bandcamp.com/album/builder')(target='_blank')
-              :markdown-it(inline) Pre-order on vinyl, CD, or download now
-    .rays
+            +link('http://humblefire.bandcamp.com/album/builder').hero-link(target='_blank')
+              :typogr:markdown-it(inline) Pre-order on vinyl, CD, or download now
+          +link('#main').hero-link.hero-down
+            .hero-down-text get down
+            .hero-down-icon
+
+    #main.rays
       .container
         .row
           .nav.col-3
-              h2.nav-header Humble Fire
-              .nav-handle
-              .nav-collapse
-                ul.nav-list
-                  +nav-item('#music', 'Music')
-                  +nav-item('#video', 'Video')
-                  +nav-item('#shows', 'Shows')
-                  +nav-item('#press', 'Press')
-                  +nav-item('#bio', 'Bio')
-                  +nav-item('https://humblefire.bandcamp.com/merch', 'Store')(target='_blank')
-                .signup
-                  include inc/tinyletter.html
-                .social-links
-                  +social-link('http://facebook.com/humblefireband', 'facebook')
-                  +social-link('http://twitter.com/humblefirerocks', 'twitter')
-                  +social-link('http://instagram.com/humblefire', 'instagram')
-                  +social-link('http://humblefire.tumblr.com', 'tumblr')
-                  +social-link('http://soundcloud.com/humblefire', 'soundcloud')
-                  +social-link('http://humblefire.bandcamp.com', 'bandcamp')
-                  +social-link('https://open.spotify.com/artist/2J0nfys688Y2Q8zXx6mevQ', 'spotify')
-                  +social-link('https://www.youtube.com/channel/UCVrSMd6doRpB5ZrZ1azqWmw', 'youtube')
+            .nav-handle
+            .nav-collapse
+              h2.nav-header
+                +link('#top', 'Humble Fire').nav-link
+              ul.nav-list
+                +nav-item('#music', 'Music')
+                +nav-item('#video', 'Video')
+                +nav-item('#shows', 'Shows')
+                +nav-item('#press', 'Press')
+                +nav-item('#bio', 'Bio')
+                +nav-item('https://humblefire.bandcamp.com/merch', 'Store')(target='_blank')
+              .signup
+                include inc/tinyletter.html
+              .social-links
+                +social-link('http://facebook.com/humblefireband', 'facebook')
+                +social-link('http://twitter.com/humblefirerocks', 'twitter')
+                +social-link('http://instagram.com/humblefire', 'instagram')
+                +social-link('http://humblefire.tumblr.com', 'tumblr')
+                +social-link('http://soundcloud.com/humblefire', 'soundcloud')
+                +social-link('http://humblefire.bandcamp.com', 'bandcamp')
+                +social-link('https://open.spotify.com/artist/2J0nfys688Y2Q8zXx6mevQ', 'spotify')
+                +social-link('https://www.youtube.com/channel/UCVrSMd6doRpB5ZrZ1azqWmw', 'youtube')
 
           .content.col-9
             +section('music', 'Music')

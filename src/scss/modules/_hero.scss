@@ -42,23 +42,46 @@
 
 .hero-content {
   width: 100%;
-  padding: (2 * $body-line-height) 0;
-  background-color: rgba(0, 0, 0, 0.5);
   @include aspect-break {
     position: absolute;
     bottom: 0;
+    padding: $body-line-height 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: $gold;
+  }
+}
+
+.hero-link {
+  .hero-title & {
+    font-weight: $font-weight-bold;
   }
 }
 
 .hero-title {
   font-size: 2em;
   line-height: 1.5 * $body-line-height;
-  color: $gold;
-  font-weight: $font-weight-bold;
 }
 
-.hero-blurb {
-  a {
-    color: $gold;
+.hero-down {
+  display: none;
+  @include aspect-break {
+    display: inline;
+  }
+}
+
+.hero-down-text {
+  font-style: italic;
+  &:hover {
+    bottom-border: none;
+  }
+}
+
+.hero-down-icon {
+  font-family: 'FontAwesome';
+  &:before {
+    content: '\f078';
+  }
+  .hero-down:hover &:before {
+    content: '\f13a';
   }
 }
