@@ -19,7 +19,7 @@ body {
   color: $black;
 }
 
-h1, h2, h3, ul, p, iframe, .fluid-width-video-wrapper {
+h1, h2, h3, ul, p, iframe, .fluid-width-video-wrapper, form {
   margin: 0 0 $body-line-height 0;
 }
 
@@ -40,6 +40,23 @@ h3 {
 
 .underline {
   border-bottom: 1px solid;
+}
+
+input {
+  height: $body-line-height;
+  border: 1px solid $gold;
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+  &[type="text"] {
+    padding-left: 1em;
+  }
+  &[type="submit"] {
+    padding: 0;
+    background: $gold;
+    color: $white;
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
 blockquote {

@@ -1,0 +1,16 @@
+.tinyletter {
+  float: left;
+}
+.tinyletter-input {
+  display: inline-block;
+  float: left;
+  input {
+    width: 100%;
+  }
+}
+.tinyletter-email {
+  width: 80%;
+}
+.tinyletter-submit {
+  width: 20%;
+}
