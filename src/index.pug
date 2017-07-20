@@ -75,6 +75,16 @@ html(lang='en')
     )
   body
     .hero
+      .hero-logo
+        include ../assets/img/logo.svg
+      .hero-image
+        img(src="img/humble-fire-roof.jpg")
+      .hero-content
+        .container
+          +spotify('spotify:user:xaqrox:playlist:40SPLGfWbQebXE5akRjQNm', 'small')
+          h1.hero-title
+            +link('http://humblefire.bandcamp.com/album/builder')(target='_blank')
+              :markdown-it(inline) Pre-order new album *Builder*, out July 28, on vinyl, CD, and download now!
     .container
       .row
         .nav.col-3

@@ -1,12 +1,55 @@
-.hero {
-  height: 100%;
-  width: 100%;
-  background: url('../img/humble-fire-elevator.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+@mixin aspect-break {
+  @media (min-aspect-ratio: 1/1) {
+    @content;
+  }
 }
 
-.hero-title {
+.hero {
+  width: 100%;
   text-align: center;
+  @include aspect-break {
+    height: 100vh;
+    background: url('../img/humble-fire-roof.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+.hero-logo {
+  @include aspect-break {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    path {
+      fill: $gold;
+    }
+  }
+}
+
+.hero-image {
+  @include aspect-break {
+    display: none;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.hero-content {
+  width: 100%;
+  margin-bottom: 3 * $body-line-height;
+  @include aspect-break {
+    position: absolute;
+    bottom: 0;
+  }
+  h1 {
+    font-size: 2em;
+    line-height: 1.5 * $body-line-height;
+    text-shadow: 0 0 5px $black;
+  }
 }
