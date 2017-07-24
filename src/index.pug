@@ -110,7 +110,8 @@ html(lang='en')
                 +nav-item('#shows', 'Shows')
                 +nav-item('#press', 'Press')
                 +nav-item('#bio', 'Bio')
-                +nav-item('https://humblefire.bandcamp.com/merch', 'Store')(target='_blank')
+                +nav-item('#store', 'Store')
+                +nav-item('#contact', 'Contact')
               .signup
                 include inc/tinyletter.html
               .social-links
@@ -152,3 +153,16 @@ html(lang='en')
 
             +section('bio', 'Bio')
               include:markdown-it(typographer):typogr inc/bio.md
+
+            +section('store', 'Store')
+              h3
+                +link('http://humblefire.bandcamp.com/merch', 'Get Vinyl, CDs, T-shirts and more at&nbsp;Bandcamp')(target='_blank')
+
+            +section('contact', 'Contact')
+              p
+                :typogr HUMBLE FIRE is Jason Arrol, Dave Epley, Nefra Faltas and Xaq Rothman
+              ul.list-plain
+                li
+                  +link('mailto:humblefirebooking@gmail.com', 'humblefirebooking@gmail.com')
+                li Press:&nbsp;
+                  +link('mailto:daniel@forcefieldpr.com', 'daniel@forcefieldpr.com')

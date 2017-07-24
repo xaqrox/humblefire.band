@@ -34,7 +34,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.4rem;
+  @include header(1.2);
   line-height: 1.25;
 }
 
@@ -83,4 +83,9 @@ blockquote {
       color: $gold;
     }
   }
+}
+
+.list-plain {
+  list-style: none;
+  padding-left: 0;
 }
