@@ -11,13 +11,13 @@ var path = {
     pug: 'src/index.pug',
     sass: 'src/scss/**/*.scss',
     babel: 'src/js/**/*.js',
-    assets: 'assets/**/*.*',
+    img: 'src/img/**/*.*',
   },
   watch: {
     pug: '{src/index.pug,src/inc/*}',
     sass: 'src/scss/**/*.scss',
     babel: 'src/js/**/*.js',
-    assets: 'assets/**/*.*',
+    img: 'src/img/**/*.*',
   },
   dist(glob) {
     return glob ? `docs/${glob}` : 'docs';
@@ -59,12 +59,12 @@ gulp.task('babel', function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task('assets', function () {
-  return gulp.src(path.src.assets)
-    .pipe(gulp.dest(path.dist()));
+gulp.task('img', function () {
+  return gulp.src(path.src.img)
+    .pipe(gulp.dest(path.dist('img')));
 });
 
-var buildTasks = ['pug', 'sass', 'babel', 'assets'];
+var buildTasks = ['pug', 'sass', 'babel', 'img'];
 
 gulp.task('build', buildTasks);
 
