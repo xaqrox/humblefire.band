@@ -1,3 +1,6 @@
+mixin meta(property, content)
+  meta(property!=property, content!=content)
+
 mixin link(path, text)
   a(
     class!=attributes.class,
@@ -57,6 +60,11 @@ html(lang='en')
     title Humble Fire
     <meta name=viewport content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    +meta('description','Humble Fire is a dream pop band from Washington, D.C. Music, Concerts, Video, Merch')
+    +meta('og:url', 'http://humblefire.band')
+    +meta('og:title', 'Humble Fire')
+    +meta('og:description','Humble Fire is a dream pop band from Washington, D.C. Music, Concerts, Video, Merch')
+    +meta('og:image', 'img/humble-fire-roof.jpg')
     script(
       src="https://use.fontawesome.com/e6a1e90877.js",
     )
