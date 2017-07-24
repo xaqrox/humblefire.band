@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gulp-imagemin": "^3.3.0",
     "jstransformer-markdown-it": "^2.0.0",
     "typogr": "^0.6.7"
   }
