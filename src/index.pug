@@ -64,7 +64,7 @@ html(lang='en')
     +meta('og:url', 'http://humblefire.band')
     +meta('og:title', 'Humble Fire')
     +meta('og:description','Humble Fire is a dream pop band from Washington, D.C. Music, Concerts, Video, Merch')
-    +meta('og:image', 'img/humble-fire-roof.jpg')
+    +meta('og:image', 'http://humblefire.band/img/humble-fire-roof.jpg')
     script(
       src="https://use.fontawesome.com/e6a1e90877.js",
     )
@@ -117,8 +117,8 @@ html(lang='en')
                 +nav-item('#video', 'Video')
                 +nav-item('#shows', 'Shows')
                 +nav-item('#press', 'Press')
-                +nav-item('#bio', 'Bio')
                 +nav-item('#store', 'Store')
+                +nav-item('#bio', 'Bio')
                 +nav-item('#contact', 'Contact')
               .signup
                 include inc/tinyletter.html
@@ -126,7 +126,6 @@ html(lang='en')
                 +social-link('http://facebook.com/humblefireband', 'facebook')
                 +social-link('http://twitter.com/humblefirerocks', 'twitter')
                 +social-link('http://instagram.com/humblefire', 'instagram')
-                +social-link('http://humblefire.tumblr.com', 'tumblr')
                 +social-link('http://soundcloud.com/humblefire', 'soundcloud')
                 +social-link('http://humblefire.bandcamp.com', 'bandcamp')
                 +social-link('https://open.spotify.com/artist/2J0nfys688Y2Q8zXx6mevQ', 'spotify')
@@ -156,15 +155,15 @@ html(lang='en')
                 :typogr "Builder" could be considered the five-and-a-half minute equivalent of the most penetrating, burning smolder of a stare humanly possible.
               +pullquote('http://audiofuzz.com/see/architectural-music-humble-fire-taliesin/', 'AudioFuzz')
                 :typogr ... what Frank Lloyd Wright's buildings would sound like if they could sing.
-              +pullquote('', 'Hometown Sounds')
+              +pullquote('https://hometownsoundsdc.com/2017/07/05/humble-fire-builder/', 'Hometown Sounds')
                 :typogr Dreamy pop band Humble Fire have simply been killing it ...
-
-            +section('bio', 'Bio')
-              include:markdown-it(typographer):typogr inc/bio.md
 
             +section('store', 'Store')
               h3
                 +link('http://humblefire.bandcamp.com/merch', 'Get Vinyl, CDs, T-shirts and more at&nbsp;Bandcamp')(target='_blank')
+
+            +section('bio', 'Bio')
+              include:markdown-it(typographer):typogr inc/bio.md
 
             +section('contact', 'Contact')
               p
