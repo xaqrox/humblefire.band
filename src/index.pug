@@ -99,12 +99,12 @@ html(lang='en')
         .container
           h1.hero-title
             +link('http://humblefire.bandcamp.com/album/builder').hero-link(target='_blank')
-              :typogr:markdown-it(inline) New album *Builder* out 28&nbsp;July 2017
+              :typogr:markdown-it(inline) New album **_Builder_** out **now**
           p.hero-blurb
             +link('http://humblefire.bandcamp.com/album/builder').hero-link(target='_blank')
-              :typogr:markdown-it(inline) Pre-order on vinyl, CD, or download now
+              :typogr:markdown-it(inline) Click here to get it on vinyl, CD, or download
           +link('#main').hero-link.hero-down
-            .hero-down-text get down
+            .hero-down-text continue to site
             .hero-down-icon
 
     #main.rays
@@ -136,9 +136,7 @@ html(lang='en')
 
           .content.col-9
             +section('music', 'Music')
-              +spotify('spotify:album:6cHmRRrOlF2A9LqN1TDF7C', 'small')
-              +spotify('spotify:album:2S82yJ2I4xcf01IRXl6FP6', 'small')
-              +spotify('spotify:album:5vtiB62FWhVHTsvKQxe8kX', 'small')
+              include inc/bandcamp.html
 
             +section('video', 'Video')
               +youtube('D_f5h_qEhQM')

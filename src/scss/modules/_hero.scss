@@ -75,6 +75,9 @@
 .hero-link {
   .hero-title & {
     font-weight: $font-weight-bold;
+    strong {
+      font-weight: 900;
+    }
   }
 }
 
