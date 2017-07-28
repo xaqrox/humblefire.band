@@ -90,8 +90,11 @@ html(lang='en')
       .hero-image
         img(
           src="img/humble-fire-roof.jpg",
-          alt="Humble Fire looking sassy on a rooftop with a beautiful blue sky behind them"
+          alt="Humble Fire looking sassy on a rooftop with a beautiful blue sky behind them. Photo by Mark Williams Hoelscher"
         )
+        .hero-photo-credit
+          | photo by
+          +link('http://mwhphoto.com/', 'Mark Williams Hoelscher')(target=_blank)
       .hero-content
         .container
           h1.hero-title

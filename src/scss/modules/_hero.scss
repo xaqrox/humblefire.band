@@ -8,6 +8,7 @@
   width: 100%;
   text-align: center;
   @include aspect-break {
+    position: relative;
     height: 100vh;
     background: url('../img/humble-fire-roof.jpg');
     background-size: cover;
@@ -32,11 +33,32 @@
 }
 
 .hero-image {
+  position: relative;
+  float: left;
+  margin-bottom: $body-line-height;
   @include aspect-break {
-    display: none;
+    position: initial;
   }
   img {
+    float: left;
     width: 100%;
+    @include aspect-break {
+      display: none;
+    }
+  }
+}
+
+.hero-photo-credit {
+  position: absolute;
+  right: 0;
+  transform-origin: 100% 0;
+  transform: rotate(-90deg) translate(0, -100%);
+  padding: 0 $grid-padding;
+  font-size: (3/5) * 1em;
+  @include aspect-break {
+    bottom: 0;
+    transform: initial;
+    z-index: 1;
   }
 }
 
@@ -46,8 +68,7 @@
     position: absolute;
     bottom: 0;
     padding: $body-line-height 0;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: $gold;
+    background-color: $white-overlay;
   }
 }
 
